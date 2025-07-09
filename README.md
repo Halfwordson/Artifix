@@ -1,16 +1,22 @@
-# artifix_app
+# Artifix
 
-A new Flutter project.
+Artifix är en mobil och desktop-app för att snabbt hitta och boka en fixare.  
+Appen är byggd i Flutter och har en Node.js-backend kopplad till Stripe för betalningar.
 
-## Getting Started
+## 📱 Funktioner (MVP)
 
-This project is a starting point for a Flutter application.
+- Gästsida med exempelbokningar och introduktion
+- Möjlighet att simulera betalning
+- Intresseanmälan via formulär
+- Flutter-app för macOS, Android och iOS (senare)
+- Node.js-backend med Express + Stripe
 
-A few resources to get you started if this is your first Flutter project:
+## 🔧 Teknisk stack
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+| Frontend       | Backend        | Övrigt            |
+|----------------|----------------|-------------------|
+| Flutter 3.8.1  | Node.js + Express | Stripe (testläge) |
+| Firestore      | CORS + dotenv  | Git + GitHub      |
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## 📂 Struktur
+

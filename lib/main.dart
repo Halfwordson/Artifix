@@ -1,10 +1,6 @@
 import 'package:flutter/material.dart';
-import 'screens/add_booking_screen.dart';
-import 'screens/booking_screen.dart';
-import 'screens/history_screen.dart';
-import 'screens/upcoming_bookings_screen.dart';
-import 'screens/guest_home_screen.dart';
-import 'screens/interest_list_screen.dart'; // ✅ lägg till
+import 'package:artifix_app/router/app_router.dart';
+
 
 void main() {
   runApp(const ArtifixApp());
@@ -15,99 +11,16 @@ class ArtifixApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return MaterialApp.router(
+      debugShowCheckedModeBanner: false,
       title: 'Artifix',
       theme: ThemeData(
-        primarySwatch: Colors.green,
         useMaterial3: true,
+        colorSchemeSeed: Colors.green,
       ),
-      home: const HomeScreen(),
-    );
-  }
-}
-
-class HomeScreen extends StatelessWidget {
-  const HomeScreen({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(title: const Text('Hem')),
-      body: Center(
-        child: SingleChildScrollView(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              ElevatedButton(
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => const BookingScreen(),
-                    ),
-                  );
-                },
-                child: const Text('Boka tid'),
-              ),
-              ElevatedButton(
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => const HistoryScreen(),
-                    ),
-                  );
-                },
-                child: const Text('Historik'),
-              ),
-              ElevatedButton(
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => const AddBookingScreen(),
-                    ),
-                  );
-                },
-                child: const Text('Lägg till bokning'),
-              ),
-              ElevatedButton(
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => const UpcomingBookingsScreen(),
-                    ),
-                  );
-                },
-                child: const Text('Kommande bokningar'),
-              ),
-              ElevatedButton(
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => const GuestHomeScreen(),
-                    ),
-                  );
-                },
-                child: const Text('Gästläge'),
-              ),
-              ElevatedButton(
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => const InterestListScreen(),
-                    ),
-                  );
-                },
-                child: const Text('Intresseanmälningar'),
-              ),
-            ],
-          ),
-        ),
-      ),
+      routeInformationParser: appRouter.routeInformationParser,
+      routerDelegate: appRouter.routerDelegate,
+      routeInformationProvider: appRouter.routeInformationProvider,
     );
   }
 }

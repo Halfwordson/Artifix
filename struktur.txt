@@ -1,0 +1,41 @@
+lib
+├── booking_screen.dart
+├── components
+│   ├── booking_card.dart
+│   ├── interest_card.dart
+│   └── primary_button.dart
+├── firebase_options.dart
+├── main.dart
+├── models
+│   ├── booking.dart
+│   ├── interest_booking.dart
+│   └── interest.dart
+├── pages
+│   └── firestore_test_page.dart
+├── router
+│   └── app_router.dart
+├── screens
+│   ├── booking
+│   │   ├── add_booking_screen.dart
+│   │   ├── booking_card.dart
+│   │   ├── booking_list_screen.dart
+│   │   └── upcoming_bookings_screen.dart
+│   ├── booking_screen.dart
+│   ├── contact_screen.dart
+│   ├── guest_home_screen.dart
+│   ├── history_screen.dart
+│   ├── interest
+│   │   ├── interest_form_screen.dart
+│   │   └── interest_list_screen.dart
+│   ├── interest_confirmation_screen.dart
+│   ├── InterestConfirmationScreen
+│   ├── login_screen.dart
+│   └── self_booking_screen.dart
+├── services
+│   ├── booking_service.dart
+│   ├── interest_booking_service.dart
+│   └── payment_service.dart
+└── widget
+    └── primary_text_field.dart
+
+10 directories, 29 files

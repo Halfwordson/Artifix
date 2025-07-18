@@ -1,34 +1,36 @@
 import '../models/booking.dart';
 
 class BookingService {
-  static final BookingService _instance = BookingService._internal();
-
-  factory BookingService() => _instance;
-
-  BookingService._internal() {
-    _bookings.addAll([
+  // Används av AdminBookingsScreen (direkt statisk lista)
+  static List<Booking> getGuestBookings() {
+    return [
       Booking(
-        name: 'Anders Rör',
-        service: 'VVS',
-        dateTime: DateTime.now().subtract(const Duration(days: 1)),
+        name: 'Elfix AB',
+        date: DateTime.now().add(const Duration(days: 1)),
+        description: 'Videosamtal för felsökning av jordfelsbrytare.',
       ),
       Booking(
-        name: 'Elsas EL',
-        service: 'EL',
-        dateTime: DateTime.now().add(const Duration(days: 1)),
+        name: 'Byggproffs i Skövde',
+        date: DateTime.now().add(const Duration(days: 3)),
+        description: 'Rådgivning om renovering av källare.',
       ),
-    ]);
+    ];
   }
 
-  final List<Booking> _bookings = [];
-
-  List<Booking> get bookings => List.unmodifiable(_bookings);
-
-  void addBooking(Booking booking) {
-    _bookings.add(booking);
-  }
-
-  void removeBooking(Booking booking) {
-    _bookings.remove(booking);
+  // Används av BookingListScreen (via FutureBuilder)
+  Future<List<Booking>> getBookings() async {
+    await Future.delayed(const Duration(milliseconds: 500));
+    return [
+      Booking(
+        name: 'Elfix AB',
+        date: DateTime.now().add(const Duration(days: 2)),
+        description: 'Felsökning via videosamtal.',
+      ),
+      Booking(
+        name: 'Byggproffs',
+        date: DateTime.now().add(const Duration(days: 5)),
+        description: 'Rådgivning om badrumsrenovering.',
+      ),
+    ];
   }
 }

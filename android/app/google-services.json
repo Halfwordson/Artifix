@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "329021968891",
+    "project_id": "arifix-310bc",
+    "storage_bucket": "arifix-310bc.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:329021968891:android:9364b75d1c0eec483c3b5e",
+        "android_client_info": {
+          "package_name": "com.artifix.app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCac94il1BzyOOemk9Go2ojktBTCekSEsc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:329021968891:android:063718d5d36143d93c3b5e",
+        "android_client_info": {
+          "package_name": "com.example.artifix_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCac94il1BzyOOemk9Go2ojktBTCekSEsc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

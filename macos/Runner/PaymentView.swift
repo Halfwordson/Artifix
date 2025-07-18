@@ -1,37 +1,24 @@
-import SwiftUI
+import Cocoa
+import FlutterMacOS
 
-struct PaymentView: View {
-    var body: some View {
-        VStack(spacing: 20) {
-            Text("15 kr för samtal")
-                .font(.title)
-                .padding()
+class PaymentView: NSViewController {
+  override func loadView() {
+    self.view = NSView()
+    self.view.wantsLayer = true
+    self.view.layer?.backgroundColor = NSColor.white.cgColor
+  }
 
-            TextField("Valfri kommentar", text: .constant(""))
-                .textFieldStyle(RoundedBorderTextFieldStyle())
-                .padding(.horizontal)
+  override func viewDidLoad() {
+    super.viewDidLoad()
 
-            Button("Betala") {
-                print("🧾 Betalning simulerad")
-            }
-            .padding()
-            .background(Color.green)
-            .foregroundColor(.white)
-            .cornerRadius(10)
+    let label = NSTextField(labelWithString: "This is a placeholder for future Stripe payment view.")
+    label.font = NSFont.systemFont(ofSize: 16)
+    label.translatesAutoresizingMaskIntoConstraints = false
+    self.view.addSubview(label)
 
-            Button("Tillbaka") {
-                NSApplication.shared.keyWindow?.close()
-            }
-            .padding(.top)
-        }
-        .frame(width: 300, height: 250)
-        .padding()
-    }
+    NSLayoutConstraint.activate([
+      label.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
+      label.centerYAnchor.constraint(equalTo: self.view.centerYAnchor)
+    ])
+  }
 }
-
-struct PaymentView_Previews: PreviewProvider {
-    static var previews: some View {
-        PaymentView()
-    }
-}
-

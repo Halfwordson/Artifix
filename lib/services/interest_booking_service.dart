@@ -1,13 +1,16 @@
-import '../models/interest_booking.dart';
+import 'package:artifix_app/models/interest_booking.dart';
 
 class InterestBookingService {
-  static final List<InterestBooking> _interestBookings = [];
+  final List<InterestBooking> _interestBookings = [];
 
-  static void addBooking(InterestBooking booking) {
+  Future<void> addInterestBooking(InterestBooking booking) async {
+    // Här simulerar vi att datan sparas (t.ex. till en backend)
+    await Future.delayed(const Duration(milliseconds: 500));
     _interestBookings.add(booking);
+    print('Intresseanmälan sparad: ${booking.name}');
   }
 
-  static List<InterestBooking> getBookings() {
-    return List.unmodifiable(_interestBookings);
+  List<InterestBooking> getAllInterestBookings() {
+    return _interestBookings;
   }
 }

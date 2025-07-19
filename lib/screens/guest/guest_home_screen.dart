@@ -12,11 +12,9 @@ class GuestHomeScreen extends StatelessWidget {
     final List<Booking> bookings = BookingService.getGuestBookings();
 
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Välkommen till Artifix'),
-      ),
+      appBar: AppBar(title: const Text('Välkommen till Artifix')),
       body: ListView(
-        padding: const EdgeInsets.all(16.0),
+        padding: const EdgeInsets.all(16),
         children: [
           const Text(
             'Behöver du hjälp med något i hemmet? Se exempel på tidigare jobb nedan.',

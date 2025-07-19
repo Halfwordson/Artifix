@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import '../../models/interest.dart';
 import '../../services/interest_service.dart';
 
 class InterestListScreen extends StatefulWidget {

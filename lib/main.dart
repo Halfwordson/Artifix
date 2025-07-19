@@ -1,8 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:artifix_app/router/app_router.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'firebase_options.dart';
+import 'router/app_router.dart'; // ← aktivera GoRouter igen
 
-
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
   runApp(const ArtifixApp());
 }
 
@@ -12,15 +17,9 @@ class ArtifixApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp.router(
-      debugShowCheckedModeBanner: false,
       title: 'Artifix',
-      theme: ThemeData(
-        useMaterial3: true,
-        colorSchemeSeed: Colors.green,
-      ),
-      routeInformationParser: appRouter.routeInformationParser,
-      routerDelegate: appRouter.routerDelegate,
-      routeInformationProvider: appRouter.routeInformationProvider,
+      debugShowCheckedModeBanner: false,
+      routerConfig: AppRouter.router, // ← använd vår router
     );
   }
 }
